@@ -1,0 +1,7 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=539
+
+favex.vim is a plugin to update a list (favlist) of favorite files and directories, and use the list to provide easy access to the favorites. 
+
+A skeletal favlist is provided. As you edit your favorites, you can add files and their directories to favlist with the :FF and :FD commands or their \ff and \fd key map equivalents. Once there are some entries in favlist, you can access your favorites by entering a favex window with either :FE or :FS and then pressing <Enter>, o, or O -- keys entirely analogous to those used in file-explorer. The key mappings, the favex window height, and the favex directory explore command can be customized by setting global variables in your vimrc.
+
+favex.vim requires Vim 6.0 (or later) run with at least "set nocompatible" in the vimrc, and with the standard file-explorer plugin (or a suitable replacement) loaded.

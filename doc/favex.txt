@@ -1,0 +1,94 @@
+*favex.txt*		favex			Last change: 2003 Jan. 22
+
+Author:		Ajit J. Thakkar (ajit_at_unb_dot_ca)
+URL:		http://www.unb.ca/chem/ajit/vim.htm
+
+favex								*favex*
+
+1. Usage				|favex-usage|
+2. Customization			|favex-customization|
+3. Installation				|favex-installation|
+==============================================================================
+1. Usage							*favex-usage*
+
+favex.vim is a plugin to update a list (favlist) of favorite files and
+directories, and use the list to provide easy access to the favorites. A
+skeletal favlist is provided. As you edit your favorites, you can add files
+and their directories to favlist with the :FF and :FD commands or their \ff
+and \fd key map equivalents. Once there are some entries in favlist, you can
+access your favorites by entering a favex window with either :FE or :FS and
+then pressing <Enter>, o, or O -- keys entirely analogous to those used in
+file-explorer.
+
+favex.vim requires Vim 6.0 (or later) run with at least "set nocompatible" in
+the vimrc, and with the standard file-explorer plugin (or a suitable
+replacement) loaded.
+
+Command summary~
+The fundamental mode of operation is via commands. Customizable key mappings
+are provided as alternative means of issuing the commands. The default key
+mappings use <Leader>, which is \ by default.
+ Command		Key mapping	Action ~
+:FExplore		<Leader>fe	Open favlist in current window
+					or move to existing favlist window
+:FSplit			<Leader>fs	Open favlist in new window
+					or move to existing favlist window
+:FFile			<Leader>ff	Add current file to favlist
+:FDirectory		<Leader>fd	Add directory of current file to favlist
+
+Unless you have other user-defined commands with similar names, the first
+two letters (both uppercase) are enough to activate the commands.
+
+The following normal mode commands are available in the favlist window. "Open"
+means "edit" for a file but "explore" with the file-explorer for a directory.
+The commands are entirely analogous to those used in the file-explorer.
+Key		Mouse			Action~
+h					Toggle help 
+Enter					Open in favlist window
+o					Open in new window
+O 		Left-Double-Click	Open in previous window
+d					Delete entry
+q					Close favlist window
+
+Only one favlist window can be open. Duplicates are not stored in the favlist.
+==============================================================================
+2. Customization					*favex-customization*
+
+You can customize the key mappings, the height of the favex window, and the
+plugin used to explore directories by setting variables in your vimrc. The
+favex_fe, favex_fs, favex_ff and favex_fd variables can be used to define
+the key maps for the :FE,:FS,:FF and :FD commands respectively. For example,
+the default key map for :FS can be changed to F3 by adding >
+	let favex_fs='<f3>'
+to vimrc. The variables favex_win_height and favex_explore_cmd respectively
+define the Favex window height (default 10) and the Favex explorer command
+(default is 'Explore'). For example, the favex window height can be set to 8
+lines in your vimrc by adding the line >
+	let favex_win_height=8
+
+You may move the favlist file to any location in your runtime path, 'rtp'. The
+favlist file is usually updated with favex commands. However, you can edit the
+favlist file with care if you so wish. The file consists of help text followed
+by a "Files" header followed by the full paths of the favorite files, one per
+line. Next comes the "Directories" header followed by the full paths of the
+favorite directories, one per line. Do not delete the help and header lines.
+==============================================================================
+3. Installation						*favex-installation*
+
+1. Unzip favex.zip, preserving directory structure, into either $HOME/.vim for
+unix or $HOME\vimfiles for MSWindows. Make sure that favex.vim is in the
+plugin subdirectory, and favex.txt is in the doc subdirectory of $HOME/.vim or
+$HOME\vimfiles as the case may be. favlist can be placed in $HOME/.vim or
+$HOME\vimfiles, or it can be placed anywhere else in your Vim runtime path. Do
+":help add-plugin", ":help add-global-plugin" and ":help runtimepath" for more
+details about Vim plugins.
+
+2. Start Vim and do either
+:helptags ~/.vim/doc (for unix)
+or
+:helptags ~\vimfiles\doc (for MSWindows)
+to rebuild the tags file. Do ":help add-local-help" for more details.
+
+3. Do :help favex to learn about usage and customization.
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:

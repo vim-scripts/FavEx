@@ -1,0 +1,9 @@
+"! h : toggle help
+"! <Enter> : open file(dir) in this window
+"! o : open file(dir) in new window
+"! O : open file(dir) in previous window
+"! d : delete entry
+"! q : quit favex
+"! :he favex for detailed help
+" Files (do not delete this line)
+" Directories (do not delete this line)
