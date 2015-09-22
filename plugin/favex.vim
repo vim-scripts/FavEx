@@ -204,7 +204,7 @@ fun! s:FavOpen(newwin)
   elseif a:newwin == 2
     split
   endif
-  exe cmd." ".thisline
+  exe cmd." ".fnameescape(thisline)
 endfun
 "}}}
 " FavList: find favlist file; create it if necessary {{{
